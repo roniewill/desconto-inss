@@ -67,6 +67,7 @@ group :development, :test do
   # Linting
   gem 'rubocop'
   gem 'rubocop-rails'
+  gem 'rubocop-rspec', require: false
 end
 
 group :development do

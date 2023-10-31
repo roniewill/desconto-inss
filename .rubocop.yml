@@ -1,1 +1,7 @@
 inherit_from: .rubocop_todo.yml
+require: rubocop-rspec
+AllCops:
+  SuggestExtensions: false
+
+Style/Documentation:
+  Enabled: false
