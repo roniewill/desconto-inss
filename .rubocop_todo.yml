@@ -21,6 +21,10 @@ Metrics/MethodLength:
 Metrics/PerceivedComplexity:
   Max: 9
 
+Metrics/BlockLength:
+  Exclude:
+    - 'db/schema.rb'
+
 # Offense count: 4
 # Configuration parameters: AllowedConstants.
 Style/Documentation:
