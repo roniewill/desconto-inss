@@ -12,22 +12,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_231_031_020_257) do
+ActiveRecord::Schema[7.0].define(version: 20_231_031_015_912) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
-
-  create_table 'addresses', force: :cascade do |t|
-    t.string 'street'
-    t.string 'number'
-    t.string 'neighborhood'
-    t.string 'city'
-    t.string 'state'
-    t.string 'cep'
-    t.bigint 'employee_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['employee_id'], name: 'index_addresses_on_employee_id'
-  end
 
   create_table 'employees', force: :cascade do |t|
     t.string 'full_name'
@@ -63,6 +50,5 @@ ActiveRecord::Schema[7.0].define(version: 20_231_031_020_257) do
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
 
-  add_foreign_key 'addresses', 'employees'
   add_foreign_key 'salaries', 'employees'
 end

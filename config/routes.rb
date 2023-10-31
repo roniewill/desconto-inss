@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :employees
   root 'home#index'
   get 'show/:id', to: 'home#show', as: :user_info
   devise_for :users, controllers: {
