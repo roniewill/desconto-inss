@@ -12,27 +12,29 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 20_231_031_015_912) do
+ActiveRecord::Schema[7.0].define(version: 20_231_031_230_950) do
   # These are extensions that must be enabled in order to support this database
   enable_extension 'plpgsql'
 
   create_table 'employees', force: :cascade do |t|
-    t.string 'full_name'
-    t.string 'cpf'
-    t.date 'birth_date'
-    t.string 'phone_number'
-    t.string 'contact_phone_number'
+    t.string 'first_name', null: false
+    t.string 'last_name', default: '', null: false
+    t.string 'cpf', null: false
+    t.date 'birth_date', null: false
+    t.string 'phone_number_one', null: false
+    t.string 'phone_number_two', default: '', null: false
+    t.decimal 'salary', default: '0.0', null: false
+    t.decimal 'inss', default: '0.0', null: false
+    t.string 'street', null: false
+    t.string 'number', default: 'no number', null: false
+    t.string 'neighborhood', null: false
+    t.string 'city', null: false
+    t.string 'state', null: false
+    t.string 'cep', null: false
     t.datetime 'created_at', null: false
     t.datetime 'updated_at', null: false
-  end
-
-  create_table 'salaries', force: :cascade do |t|
-    t.decimal 'value'
-    t.decimal 'inss'
-    t.bigint 'employee_id', null: false
-    t.datetime 'created_at', null: false
-    t.datetime 'updated_at', null: false
-    t.index ['employee_id'], name: 'index_salaries_on_employee_id'
+    t.index ['cpf'], name: 'index_employees_on_cpf', unique: true
+    t.index ['phone_number_one'], name: 'index_employees_on_phone_number_one', unique: true
   end
 
   create_table 'users', force: :cascade do |t|
@@ -49,6 +51,4 @@ ActiveRecord::Schema[7.0].define(version: 20_231_031_015_912) do
     t.index ['email'], name: 'index_users_on_email', unique: true
     t.index ['reset_password_token'], name: 'index_users_on_reset_password_token', unique: true
   end
-
-  add_foreign_key 'salaries', 'employees'
 end
