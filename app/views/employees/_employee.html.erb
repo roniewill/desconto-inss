@@ -1,71 +1,71 @@
-<div id="<%= dom_id employee %>">
+<div>
   <p>
-    <strong>Fisrt name:</strong>
-    <%= employee.fisrt_name %>
+    <strong>Nome:</strong>
+    <%= employee.first_name %>
   </p>
 
   <p>
-    <strong>Last name:</strong>
+    <strong>Sobrenome:</strong>
     <%= employee.last_name %>
   </p>
 
   <p>
-    <strong>Cpf:</strong>
+    <strong>CPF:</strong>
     <%= employee.cpf %>
   </p>
 
   <p>
-    <strong>Birth date:</strong>
-    <%= employee.birth_date %>
+    <strong>Data de Nascimento:</strong>
+    <%= employee.birth_date.strftime('%d/%m/%Y') %>
   </p>
 
   <p>
-    <strong>Phone one:</strong>
-    <%= employee.phone_one %>
+    <strong>Ceular:</strong>
+    <%= employee.phone_number_one %>
   </p>
 
   <p>
-    <strong>Phone two:</strong>
-    <%= employee.phone_two %>
+    <strong>Telefone:</strong>
+    <%= employee.phone_number_two %>
   </p>
 
   <p>
-    <strong>Salary:</strong>
+    <strong>Salário:</strong>
     <%= employee.salary %>
   </p>
 
   <p>
-    <strong>Inss:</strong>
+    <strong>INSS:</strong>
     <%= employee.inss %>
   </p>
 
   <p>
-    <strong>Street:</strong>
+    <strong>Rua:</strong>
     <%= employee.street %>
   </p>
 
   <p>
-    <strong>Number:</strong>
+    <strong>Número:</strong>
     <%= employee.number %>
   </p>
 
   <p>
-    <strong>Neighborhood:</strong>
+    <strong>Bairro:</strong>
     <%= employee.neighborhood %>
   </p>
 
   <p>
-    <strong>City:</strong>
+    <strong>Cidade:</strong>
     <%= employee.city %>
   </p>
 
   <p>
-    <strong>State:</strong>
+    <strong>Estado:</strong>
     <%= employee.state %>
   </p>
 
   <p>
-    <strong>Cep:</strong>
+    <strong>CEP:</strong>
     <%= employee.cep %>
   </p>
 

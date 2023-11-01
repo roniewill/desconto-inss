@@ -2,6 +2,7 @@
 
 class EmployeesController < ApplicationController
   before_action :set_employee, only: %i[show edit update destroy]
+  before_action :authenticate_user!
 
   # GET /employees or /employees.json
   def index
@@ -66,6 +67,6 @@ class EmployeesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def employee_params
-    params.require(:employee).permit(:fisrt_name, :last_name, :cpf, :birth_date, :phone_one, :phone_two, :salary, :inss, :street, :number, :neighborhood, :city, :state, :cep)
+    params.require(:employee).permit(:first_name, :last_name, :cpf, :birth_date, :phone_number_one, :phone_number_two, :salary, :inss, :street, :number, :neighborhood, :city, :state, :cep)
   end
 end
