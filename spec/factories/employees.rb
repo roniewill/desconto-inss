@@ -2,19 +2,19 @@
 
 FactoryBot.define do
   factory :employee do
-    first_name { 'Fulano' }
-    last_name { 'Moroeira' }
-    cpf { '38290322003' }
-    birth_date { '2000-10-31' }
-    phone_number_one { '7199898-9898' }
-    phone_number_two { '9199898-9898' }
-    salary { '3000' }
-    inss { '281,62' }
-    street { 'Travessa Capitão Francisco Ferreira' }
-    number { '22' }
-    neighborhood { 'Mecejana' }
-    city { 'Boa Vista' }
-    state { 'RR' }
-    cep { '69304-610' }
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    cpf { Faker::IDNumber.brazilian_citizen_number }
+    birth_date { Faker::Date.birthday(min_age: 21, max_age: 65) }
+    phone_number_one { Faker::PhoneNumber.cell_phone }
+    phone_number_two { Faker::PhoneNumber.cell_phone }
+    salary { rand(1045..6101) }
+    inss { rand(80..850) }
+    street { Faker::Address.full_address }
+    number { Faker::Number.number(digits: 4) }
+    neighborhood { Faker::Address.street_address }
+    city { Faker::Address.city }
+    state { Faker::Address.state }
+    cep { Faker::Address.zip }
   end
 end
