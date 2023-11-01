@@ -2,19 +2,19 @@
 
 FactoryBot.define do
   factory :employee do
-    fisrt_name { 'MyString' }
-    last_name { 'MyString' }
-    cpf { 'MyString' }
-    birth_date { '2023-10-31' }
-    phone_one { 'MyString' }
-    phone_two { 'MyString' }
-    salary { '9.99' }
-    inss { '9.99' }
-    street { 'MyString' }
-    number { 'MyString' }
-    neighborhood { 'MyString' }
-    city { 'MyString' }
-    state { 'MyString' }
-    cep { 'MyString' }
+    first_name { 'Fulano' }
+    last_name { 'Moroeira' }
+    cpf { '38290322003' }
+    birth_date { '2000-10-31' }
+    phone_number_one { '7199898-9898' }
+    phone_number_two { '9199898-9898' }
+    salary { '3000' }
+    inss { '281,62' }
+    street { 'Travessa Capitão Francisco Ferreira' }
+    number { '22' }
+    neighborhood { 'Mecejana' }
+    city { 'Boa Vista' }
+    state { 'RR' }
+    cep { '69304-610' }
   end
 end

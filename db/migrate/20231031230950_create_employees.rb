@@ -3,20 +3,20 @@
 class CreateEmployees < ActiveRecord::Migration[7.0]
   def change
     create_table :employees do |t|
-      t.string :fisrt_name
-      t.string :last_name
-      t.string :cpf
-      t.date :birth_date
-      t.string :phone_number_one
-      t.string :phone_number_two
-      t.decimal :salary
-      t.decimal :inss
-      t.string :street
-      t.string :number
-      t.string :neighborhood
-      t.string :city
-      t.string :state
-      t.string :cep
+      t.string :first_name, null: false
+      t.string :last_name, null: false, default: ''
+      t.string :cpf, null: false
+      t.date :birth_date, null: false
+      t.string :phone_number_one, null: false
+      t.string :phone_number_two, null: false, default: ''
+      t.decimal :salary, null: false, default: 0
+      t.decimal :inss, null: false, default: 0
+      t.string :street, null: false
+      t.string :number, null: false, default: 'no number'
+      t.string :neighborhood, null: false
+      t.string :city, null: false
+      t.string :state, null: false
+      t.string :cep, null: false
 
       t.timestamps
     end
