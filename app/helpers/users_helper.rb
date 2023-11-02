@@ -1,16 +1,14 @@
 # frozen_string_literal: true
 
 module UsersHelper
-  def check_role(role)
-    case role
-    when 'user'
+  def check_role(admin)
+    case admin
+    when false
       'Usuário normal'
-    when 'moderator'
-      'Moderador'
-    when 'admin'
+    when true
       'Administrador'
     else
-      'Contate o administrador'
+      'Contate o suporte'
     end
   end
 end
