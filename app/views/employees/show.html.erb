@@ -6,7 +6,7 @@
 
     <div class="row my-2">
       <%= link_to "Retorne para funcionários", employees_path, class: "link-offset-2" %>
-      <% if current_user.role == 'admin' %>
+      <% if current_user.try(:admin?) %>
         <%= button_to "Excluir funcionário?", @employee, method: :delete %>
       <% end %>
     </div>

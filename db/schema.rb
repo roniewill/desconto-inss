@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_10_31_230950) do
+ActiveRecord::Schema[7.0].define(version: 2023_11_02_163921) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -23,7 +23,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_31_230950) do
     t.date "birth_date", null: false
     t.string "phone_number_one", null: false
     t.string "phone_number_two", default: "", null: false
-    t.decimal 'salary', default: "0.0", null: false
+    t.decimal "salary", default: "0.0", null: false
     t.decimal "inss", default: "0.0", null: false
     t.string "street", null: false
     t.string "number", default: "no number", null: false
@@ -47,7 +47,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_10_31_230950) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "role", default: 0
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

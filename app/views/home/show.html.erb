@@ -14,7 +14,7 @@
             <p class="lead">E-mail: <%= current_user.email %></p>
             <p class="lead">Data de cadastro: <%= current_user.created_at.strftime('%d/%m/%Y') %></p>
             <p class="lead">Ultima atualização: <%= current_user.updated_at.strftime('%d/%m/%Y') %></p>
-            <p class="lead">Perfil: <%= check_role(current_user.role) %></p>
+            <p class="lead">Perfil: <%= check_role(current_user.admin) %></p>
             <p><%= link_to "Edite seus dados", edit_user_registration_path(current_user), data: { turbo_method: :get }, class: "btn btn-secondary" %></p>
         </div>
     </div>

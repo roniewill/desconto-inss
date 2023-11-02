@@ -18,12 +18,45 @@ RSpec.describe '/employees', type: :request do
   # This should return the minimal set of attributes required to create a valid
   # Employee. As you add validations to Employee, be sure to
   # adjust the attributes here as well.
+
+  let(:employee) { build(:employee) }
+
   let(:valid_attributes) do
-    skip('Add a hash of attributes valid for your model')
+    {
+      first_name: employee.first_name,
+      last_name: employee.last_name,
+      cpf: employee.cpf,
+      birth_date: employee.birth_date,
+      phone_number_one: employee.phone_number_one,
+      phone_number_two: employee.phone_number_two,
+      salary: employee.salary,
+      inss: employee.inss,
+      street: employee.street,
+      number: employee.number,
+      neighborhood: employee.neighborhood,
+      city: employee.city,
+      state: employee.state,
+      cep: employee.cep
+    }
   end
 
   let(:invalid_attributes) do
-    skip('Add a hash of attributes invalid for your model')
+    {
+      first_name: nil,
+      last_name: employee.last_name,
+      cpf: nil,
+      birth_date: employee.birth_date,
+      phone_number_one: nil,
+      phone_number_two: employee.phone_number_two,
+      salary: employee.salary,
+      inss: employee.inss,
+      street: employee.street,
+      number: employee.number,
+      neighborhood: employee.neighborhood,
+      city: employee.city,
+      state: employee.state,
+      cep: employee.cep
+    }
   end
 
   describe 'GET /index' do
@@ -87,16 +120,7 @@ RSpec.describe '/employees', type: :request do
 
   describe 'PATCH /update' do
     context 'with valid parameters' do
-      let(:new_attributes) do
-        skip('Add a hash of attributes valid for your model')
-      end
-
-      it 'updates the requested employee' do
-        employee = Employee.create! valid_attributes
-        patch employee_url(employee), params: { employee: new_attributes }
-        employee.reload
-        skip('Add assertions for updated state')
-      end
+      let(:new_attributes) { { cpf: employee.cpf, phone_number_one: employee.phone_number_one } }
 
       it 'redirects to the employee' do
         employee = Employee.create! valid_attributes
