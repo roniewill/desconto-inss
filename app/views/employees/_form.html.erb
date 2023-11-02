@@ -1,0 +1,23 @@
+<%= bootstrap_form_for @employee do |form| %>
+
+  <div class="row g-3">
+    <%= render "shared/error_messages", resource: @employee %>
+
+    <div class="col-auto"><%= form.text_field :first_name, label: "Nome", size: 25 %></div>
+    <div class="col-auto"><%= form.text_field :last_name, label: "Sobrenome", size: 25 %></div>
+    <div class="col-auto"><%= form.text_field :cpf, label: "CPF", size: 18 %></div>
+    <div class="col-auto"><%= form.date_field :birth_date, label: "Data de Nascimento", size: 18 %></div>
+    <div class="col-auto"><%= form.text_field :phone_number_one, label: "Celular", size: 18 %></div>
+    <div class="col-auto"><%= form.text_field :phone_number_two, label: "Telefone", size: 18 %></div>
+    <div class="col-auto"><%= form.text_field :salary, label: "Salário", size: 18 %></div>
+    <div class="col-auto"><%= form.text_field :inss, label: "INSS", size: 18 %></div>
+    <div class="col-auto"><%= form.text_field :street, label: "Lagradouro", size: 100 %></div>
+    <div class="col-auto"><%= form.text_field :number, label: "Número", size: 10 %></div>
+    <div class="col-auto"><%= form.text_field :neighborhood, label: "Bairro", size: 18 %></div>
+    <div class="col-auto"><%= form.text_field :city, label: "Cidade", size: 18 %></div>
+    <div class="col-auto"><%= form.text_field :state, label: "Estado", size: 18 %></div>
+    <div class="col-auto"><%= form.text_field :cep, label: "CEP", size: 18 %></div>
+
+    <%= form.submit "Cadastrar Funcionário" %>
+  </div>
+<% end %>

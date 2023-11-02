@@ -1,0 +1,17 @@
+<div class="row justify-content-center">
+
+  <div class="col-5 mt-4 bg-light border rounded-3">
+
+    <%= render @employee %>
+
+    <div class="row my-2">
+      <%= link_to "Retorne para funcionários", employees_path, class: "link-offset-2" %>
+      <% if current_user.role == 'admin' %>
+        <%= button_to "Excluir funcionário?", @employee, method: :delete %>
+      <% end %>
+    </div>
+
+  </div>
+    
+</div>
+   
