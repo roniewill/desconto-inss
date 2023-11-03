@@ -71,6 +71,9 @@ GEM
     bindex (0.8.1)
     bootsnap (1.17.0)
       msgpack (~> 1.2)
+    bootstrap5-kaminari-views (0.0.1)
+      kaminari (>= 0.13)
+      rails (>= 3.1)
     bootstrap_form (5.4.0)
       actionpack (>= 6.1)
       activemodel (>= 6.1)
@@ -117,6 +120,18 @@ GEM
     jsbundling-rails (1.2.1)
       railties (>= 6.0.0)
     json (2.6.3)
+    kaminari (1.2.2)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.2)
+      kaminari-activerecord (= 1.2.2)
+      kaminari-core (= 1.2.2)
+    kaminari-actionview (1.2.2)
+      actionview
+      kaminari-core (= 1.2.2)
+    kaminari-activerecord (1.2.2)
+      activerecord
+      kaminari-core (= 1.2.2)
+    kaminari-core (1.2.2)
     language_server-protocol (3.17.0.3)
     loofah (2.21.4)
       crass (~> 1.0.2)
@@ -283,6 +298,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap
+  bootstrap5-kaminari-views
   bootstrap_form (~> 5.4)
   brakeman
   bundler-audit
@@ -293,6 +309,7 @@ DEPENDENCIES
   faker
   jbuilder
   jsbundling-rails
+  kaminari (~> 1.2)
   pg (~> 1.1)
   pry (~> 0.14.2)
   puma (~> 5.0)
