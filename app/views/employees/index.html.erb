@@ -31,8 +31,8 @@
             <th scope="row"><%= employee.last_name %></th>
             <th scope="row"><%= employee.cpf %></th>
             <th scope="row"><%= employee.phone_number_one %></th>
-            <th scope="row"><%= employee.salary %></th>
-            <th scope="row"><%= employee.inss %></th>
+            <th scope="row"><%= brl_format(employee.salary) %></th>
+            <th scope="row"><%= brl_format(employee.inss) %></th>
             <th scope="row">
               <%= link_to content_tag( :i, nil, class: 'bi bi-eye text-info'), employee_path(employee), title: "Ver Detalhes", data: { turbo_method: :get } %>
               <%= link_to content_tag( :i, nil, class: 'bi bi-pen text-secondary'), edit_employee_path(employee), title: "Editar", data: { turbo_method: :get } %>
