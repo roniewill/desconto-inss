@@ -95,9 +95,9 @@ $ code .
 
 # then run the commands on your terminal
 $ bundle install
-$ yarn install
-$ rails db:create db:migrate
-$ rails server 
+$ bin/setup
+$ rake db:seeds
+$ bin/dev 
 # or: rails s
 # The server will start by default at port: 3000 - go to http://localhost:3000
 
@@ -118,7 +118,6 @@ $ rails server
 -   **[Node LTS](https://nodejs.org/en/)**
 -   **[Yarn](https://yarnpkg.com/)**
 -   **[Bootstrap 5](https://getbootstrap.com/docs/5.0/getting-started/download/)**
--   **[JQuery](https://bityl.co/M72o)**
 
 
 #### **Utilities**
@@ -127,12 +126,14 @@ $ rails server
 -   Static code analyzer :  **[RuboCop](https://github.com/rubocop/rubocop)**
 -   Manager User :  **[Devise](https://github.com/heartcombo/devise)**
 -   Pagination: **[Kaminari](https://github.com/kaminari/kaminari)**
+-   Factory bot: **[factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)**
+-   Faker: **[Faker](https://github.com/faker-ruby/faker)**
 
 #### **Plugins**
 
 - **[Inputmask](https://github.com/RobinHerbots/Inputmask)**
-- **[Money-Rails](https://github.com/RubyMoney/money-rails/)**
 - **[Bootstrap 5 Kaminari Views](https://github.com/felipecalvo/bootstrap5-kaminari-views)**
+- **[autoNumeric](https://github.com/autoNumeric/autoNumeric/)**
 
 ---
 

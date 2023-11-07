@@ -9,8 +9,8 @@ class CreateEmployees < ActiveRecord::Migration[7.0]
       t.date :birth_date, null: false
       t.string :phone_number_one, null: false
       t.string :phone_number_two, null: false, default: ''
-      t.decimal :salary, null: false, default: 0
-      t.decimal :inss, null: false, default: 0
+      t.decimal :salary, null: false, precision: 10, scale: 2, default: 0.00
+      t.decimal :inss, null: false, precision: 10, scale: 2, default: 0.00
       t.string :street, null: false
       t.string :number, null: false, default: 'no number'
       t.string :neighborhood, null: false

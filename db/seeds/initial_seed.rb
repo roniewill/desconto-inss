@@ -2,8 +2,8 @@
 
 # USERS
 users = [
-  { first_name: 'Major User', last_name: 'First', email: 'admin@email.com', password: 'pass12', admin: true },
-  { first_name: 'Second User', last_name: 'Secondary', email: 'second@email.com', password: 'pass12', admin: false }
+  { first_name: 'Administrador', last_name: 'master', email: 'admin@email.com', password: 'pass12', admin: true },
+  { first_name: 'Usuário', last_name: 'Comun', email: 'second@email.com', password: 'pass12', admin: false }
 ]
 
 User.destroy_all

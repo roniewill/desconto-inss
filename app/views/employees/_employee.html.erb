@@ -12,8 +12,8 @@
     <p class="lead">Data de nascimento: <b class="font-monospace"><%= employee.birth_date.strftime('%d/%m/%Y') %></b></p>
     <p class="lead">Celular: <b class="font-monospace"><%= employee.phone_number_one %></b></p>
     <p class="lead">Telefone: <b class="font-monospace"><%= employee.phone_number_two %></b></p>
-    <p class="lead">Salário: <b class="font-monospace"><%= employee.salary %></b></p>
-    <p class="lead">INSS: <b class="font-monospace"><%= employee.inss %></b></p>
+    <p class="lead">Salário: <b class="font-monospace"><%= brl_format(employee.salary) %></b></p>
+    <p class="lead">INSS: <b class="font-monospace"><%= brl_format(employee.inss) %></b></p>
     <p class="lead">Lagradouro: <b class="font-monospace"><%= employee.street %></b></p>
     <p class="lead">Número: <b class="font-monospace"><%= employee.number %></b></p>
     <p class="lead">Bairro: <b class="font-monospace"><%= employee.neighborhood %></b></p>

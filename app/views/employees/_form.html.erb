@@ -1,23 +1,138 @@
-<%= bootstrap_form_for @employee do |form| %>
+<%= render "shared/error_messages", resource: @employee %>
+
+<%= form_for @employee do |form| %>
 
   <div class="row g-3">
-    <%= render "shared/error_messages", resource: @employee %>
 
-    <div class="col-auto"><%= form.text_field :first_name, label: "Nome", size: 25 %></div>
-    <div class="col-auto"><%= form.text_field :last_name, label: "Sobrenome", size: 25 %></div>
-    <div class="col-auto"><%= form.text_field :cpf, label: "CPF", size: 18 %></div>
-    <div class="col-auto"><%= form.date_field :birth_date, label: "Data de Nascimento", size: 18 %></div>
-    <div class="col-auto"><%= form.text_field :phone_number_one, label: "Celular", size: 18 %></div>
-    <div class="col-auto"><%= form.text_field :phone_number_two, label: "Telefone", size: 18 %></div>
-    <div class="col-auto"><%= form.text_field :salary, label: "Salário", size: 18 %></div>
-    <div class="col-auto"><%= form.text_field :inss, label: "INSS", size: 18 %></div>
-    <div class="col-auto"><%= form.text_field :street, label: "Lagradouro", size: 100 %></div>
-    <div class="col-auto"><%= form.text_field :number, label: "Número", size: 10 %></div>
-    <div class="col-auto"><%= form.text_field :neighborhood, label: "Bairro", size: 18 %></div>
-    <div class="col-auto"><%= form.text_field :city, label: "Cidade", size: 18 %></div>
-    <div class="col-auto"><%= form.text_field :state, label: "Estado", size: 18 %></div>
-    <div class="col-auto"><%= form.text_field :cep, label: "CEP", size: 18 %></div>
+    <div class="form-group row mt-3">
 
-    <%= form.submit "Cadastrar Funcionário" %>
+      <%= form.label :first_name, "Nome" %>
+
+      <%= form.text_field :first_name, autofocus: true, class: "form-control", placeholder: "Digite seu primeiro nome" %>
+
+    </div>
+
+    <div class="form-group row mt-3">
+
+      <%= form.label :last_name, "Sobrenome" %>
+
+      <%= form.text_field :last_name, autofocus: true, class: "form-control", placeholder: "Digite seu sobrenome" %>
+
+    </div>
+
+    <div class="form-group row mt-3" data-controller="mask">
+
+      <%= form.label :cpf, "CPF" %>
+
+      <%= form.text_field :cpf, autofocus: true, class: "form-control cpf-mask" %>
+
+    </div>
+
+    <div class="form-group row mt-3">
+
+      <%= form.label :birth_date, "Data de Nascimento" %>
+
+      <%= form.date_field :birth_date, autofocus: true, class: "form-control" %>
+
+    </div>
+
+    <div class="form-group row mt-3" data-controller="mask">
+
+      <%= form.label :phone_number_one, "Celular" %>
+
+      <%= form.text_field :phone_number_one, autofocus: true, class: "form-control phone-mask" %>
+
+    </div>
+
+    <div class="form-group row mt-3" data-controller="mask">
+
+      <%= form.label :phone_number_two, "Telefone alternativo" %>
+
+      <%= form.text_field :phone_number_two, autofocus: true, class: "form-control phone-mask" %>
+
+    </div>
+
+    <!-- INSS CALCULATION -->
+    <div data-controller="inss-calc">
+
+      <div class="form-group row mt-3">
+
+        <%= form.label :salary, "Salário" %>
+
+        <%= form.text_field :salary, autofocus: true, data: {
+            inss_calc_target: "salary",
+            action: "change->inss-calc#setInssDiscount"
+          }, class: "form-control" %>
+
+      </div>
+
+      <div class="form-group row mt-3">
+
+        <%= form.label :inss, "INSS" %>
+
+        <%= form.text_field :inss, autofocus: true, data: {
+            inss_calc_target: "inss"
+          },  class: "form-control", disabled: false %>
+
+      </div>
+
+    </div>
+    <!-- END INSS CALCULATION -->
+
+    <div class="form-group row mt-3">
+
+      <%= form.label :street, "Lagradouro" %>
+
+      <%= form.text_field :street, autofocus: true, class: "form-control" %>
+
+    </div>
+
+    <div class="form-group row mt-3">
+
+      <%= form.label :number, "Número" %>
+
+      <%= form.text_field :number, { autofocus: true, class: "form-control" } %>
+
+    </div>
+
+    <div class="form-group row mt-3">
+
+      <%= form.label :neighborhood, "Bairro" %>
+
+      <%= form.text_field :neighborhood, autofocus: true, class: "form-control", placeholder: "Digite seu bairoo" %>
+
+    </div>
+
+    <div class="form-group row mt-3">
+
+      <%= form.label :city, "Cidade" %>
+
+      <%= form.text_field :city, autofocus: true, class: "form-control", placeholder: "Digite sua cidade" %>
+
+    </div>
+
+    <div class="form-group row mt-3">
+
+      <%= form.label :state, "Nome" %>
+
+      <%= form.text_field :state, autofocus: true, class: "form-control", placeholder: "Digite o estado" %>
+
+    </div>
+
+    <div class="form-group row mt-3" data-controller="mask">
+
+      <%= form.label :cep, "CEP" %>
+
+      <%= form.text_field :cep, autofocus: true, class: "form-control cep-mask" %>
+
+    </div>
+
+
+    <div class=" form-group row mt-3">
+
+      <%= form.submit "Salvar", class: "btn btn-primary" %>
+
+    </div>
+
   </div>
 <% end %>

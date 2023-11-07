@@ -1,12 +1,13 @@
 # frozen_string_literal: true
 
 class EmployeesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_employee, only: %i[show edit update destroy]
 
   # GET /employees or /employees.json
   def index
     # @employees = Employee.all
-    @employees = Employee.page(params[:page]).per(5)
+    @employees = Employee.order(created_at: :desc).page(params[:page]).per(5)
   end
 
   # GET /employees/1 or /employees/1.json
@@ -26,7 +27,7 @@ class EmployeesController < ApplicationController
 
     respond_to do |format|
       if @employee.save
-        format.html { redirect_to employee_url(@employee), notice: 'Employee was successfully created.' }
+        format.html { redirect_to employee_url(@employee), notice: 'Funcionário foi cadastrado com sucesso!' }
         format.json { render :show, status: :created, location: @employee }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -39,7 +40,7 @@ class EmployeesController < ApplicationController
   def update
     respond_to do |format|
       if @employee.update(employee_params)
-        format.html { redirect_to employee_url(@employee), notice: 'Employee was successfully updated.' }
+        format.html { redirect_to employee_url(@employee), notice: 'Funcionário foi atualizado com sucesso!' }
         format.json { render :show, status: :ok, location: @employee }
       else
         format.html { render :edit, status: :unprocessable_entity }
