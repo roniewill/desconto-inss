@@ -54,6 +54,7 @@ INSS Discount - It is a very simple employee management system with the purpose 
   - add one or more employees
   - exclude one or more employees if your're an admin
   - cand see and edit employee info
+  - The main feature is add a salary and get the INSS rate the automatic way
 
 ---
 
@@ -123,8 +124,8 @@ $ bin/dev
 #### **Utilities**
 
 -   Tests:  **[RSPec](https://rspec.info/)**
--   Static code analyzer :  **[RuboCop](https://github.com/rubocop/rubocop)**
--   Manager User :  **[Devise](https://github.com/heartcombo/devise)**
+-   Static code analyzer and code formatter:  **[RuboCop](https://github.com/rubocop/rubocop)**
+-   Manager User authentication:  **[Devise](https://github.com/heartcombo/devise)**
 -   Pagination: **[Kaminari](https://github.com/kaminari/kaminari)**
 -   Factory bot: **[factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)**
 -   Faker: **[Faker](https://github.com/faker-ruby/faker)**
