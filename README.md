@@ -113,7 +113,7 @@ $ bin/dev
 
 #### **Main Tools**
 
--   **[Ruby 2.7.2](https://www.ruby-lang.org/en/downloads/)**
+-   **[Ruby 3.2.2](https://www.ruby-lang.org/en/downloads/)**
 -   **[Rails 7.0.8](https://github.com/rails/rails/tree/7-0-stable)**
 -   **[PostgreSQL](https://www.postgresql.org/)**
 -   **[Node LTS](https://nodejs.org/en/)**
