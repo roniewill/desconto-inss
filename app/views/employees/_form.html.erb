@@ -52,21 +52,32 @@
 
     </div>
 
-    <div class="form-group row mt-3" data-controller="mask">
+    <!-- INSS CALCULATION -->
+    <div data-controller="inss-calc">
 
-      <%= form.label :salary, "Salário" %>
+      <div class="form-group row mt-3">
 
-      <%= form.text_field :salary, autofocus: true, class: "form-control salary-mask" %>
+        <%= form.label :salary, "Salário" %>
+
+        <%= form.text_field :salary, autofocus: true, data: {
+            inss_calc_target: "salary",
+            action: "change->inss-calc#setInssDiscount"
+          }, class: "form-control" %>
+
+      </div>
+
+      <div class="form-group row mt-3">
+
+        <%= form.label :inss, "INSS" %>
+
+        <%= form.text_field :inss, autofocus: true, data: {
+            inss_calc_target: "inss"
+          },  class: "form-control", disabled: false %>
+
+      </div>
 
     </div>
-
-    <div class="form-group row mt-3">
-
-      <%= form.label :inss, "INSS" %>
-
-      <%= form.text_field :inss, autofocus: true, class: "form-control", disabled: true %>
-
-    </div>
+    <!-- END INSS CALCULATION -->
 
     <div class="form-group row mt-3">
 

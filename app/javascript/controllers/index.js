@@ -5,4 +5,7 @@
 import { application } from "./application"
 
 import MaskController from "./mask_controller"
+import InssCalcController from "./inss_calc_controller"
+
 application.register("mask", MaskController)
+application.register("inss-calc", InssCalcController)

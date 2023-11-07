@@ -5,10 +5,9 @@ import Inputmask from "inputmask";
 export default class extends Controller {
 
   connect() {
-  
     const phone_field = document.getElementsByClassName("phone-mask")
     const cep_field = document.getElementsByClassName("cep-mask")
-    const salary_field = document.getElementsByClassName("salary-mask")
+    const salary_field = document.getElementsByClassName("salary-mask").value
     const cpf_field = document.getElementsByClassName("cpf-mask")
 
     const phone_mask = new Inputmask("(99) 9 9999-9999")
