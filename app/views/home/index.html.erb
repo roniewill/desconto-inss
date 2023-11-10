@@ -1,9 +1,36 @@
 <% if user_signed_in? %>
     <div class="container-lg mt-4"> 
         <div class="p-5 mb-4 bg-light border rounded-3"> 
-            <h1>Bem Vindo <% if current_user.first_name? %><%= current_user.first_name %><% else %><%= current_user.email %><% end %></h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse sagittis iaculis ultrices. Ut congue, arcu at vestibulum suscipit, turpis arcu pellentesque risus, sed ultrices ipsum nunc vitae erat. In id consequat nunc. Pellentesque congue quam et mauris ultrices eleifend. Phasellus a lorem lorem. Suspendisse eu pellentesque tortor. Nulla facilisi. Nunc ut lorem maximus, laoreet lacus id, iaculis est. Integer tempor, lorem id tempus eleifend, lectus leo euismod diam, a iaculis elit est in nulla. Sed nibh mauris, auctor eget lectus id, suscipit imperdiet neque. Mauris fringilla egestas ipsum et volutpat. Aenean dignissim sem maximus imperdiet venenatis. Integer vitae libero consectetur quam luctus pharetra. Cras non vestibulum tellus, vel condimentum risus. Curabitur maximus mollis nibh at varius. Donec sagittis et purus a pharetra.</p>
-            <p><a href="/employees" class="btn btn-primary btn-lg">CLIQUE PARA VER TOODOS OS FUNCIONÁRIOS</a></p>
+            <div class="row">
+                <!-- CHART -->
+            <div class="col">
+                <%= pie_chart report_path %>
+            </div>
+            
+            <!-- END CHART -->
+
+            <!-- SALARIES LIST GROUP BY RANGE -->
+            <div class="col">
+                <table class="table">
+                    <thead>
+                        <tr>
+                        <th scope="col">Salários</th>
+                        <th scope="col">Funcionários por salário</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% @salaries.each do |salary| %>
+                        <tr>
+                            <th scope="row"><%= brl_format(salary[0]) %></th>
+                            <th scope="row"><%= salary[1] %></th>
+                            </th>
+                        </tr>
+                        <% end %>
+                    </tbody>
+                </table>
+            </div>
+            </div>
         </div>
+        <p><a href="/employees" class="btn btn-primary">VER FUNCIONÁRIOS</a></p>
     </div>
 <% end %>

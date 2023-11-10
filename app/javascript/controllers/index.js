@@ -4,6 +4,8 @@
 
 import { application } from "./application"
 
+import "chartkick/chart.js"
+
 import MaskController from "./mask_controller"
 import InssCalcController from "./inss_calc_controller"
 

@@ -88,3 +88,5 @@ gem 'devise'
 
 gem 'bootstrap5-kaminari-views'
 gem 'kaminari', '~> 1.2'
+
+gem 'chartkick'
