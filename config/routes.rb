@@ -9,5 +9,7 @@ Rails.application.routes.draw do
 
   get 'show/:id', to: 'home#show', as: :user_info
 
+  get 'report', to: 'home#report'
+
   resources :employees
 end

@@ -54,6 +54,7 @@ INSS Discount - It is a very simple employee management system with the purpose 
   - add one or more employees
   - exclude one or more employees if your're an admin
   - cand see and edit employee info
+  - you can see a chart showing some reports filtered by salaries range
   - The main feature is add a salary and get the INSS rate the automatic way
 
 ---
@@ -129,12 +130,14 @@ $ bin/dev
 -   Pagination: **[Kaminari](https://github.com/kaminari/kaminari)**
 -   Factory bot: **[factory_bot_rails](https://github.com/thoughtbot/factory_bot_rails)**
 -   Faker: **[Faker](https://github.com/faker-ruby/faker)**
+-   Chartkick: **[chartkick](https://github.com/ankane/chartkick)**
 
 #### **Plugins**
 
 - **[Inputmask](https://github.com/RobinHerbots/Inputmask)**
 - **[Bootstrap 5 Kaminari Views](https://github.com/felipecalvo/bootstrap5-kaminari-views)**
 - **[autoNumeric](https://github.com/autoNumeric/autoNumeric/)**
+- **[ChartJs](https://github.com/chartjs/Chart.js)**
 
 ---
 
