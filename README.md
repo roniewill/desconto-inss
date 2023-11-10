@@ -71,12 +71,12 @@ INSS Discount - It is a very simple employee management system with the purpose 
 ---
 
 
-## 🚀 How it works
+## 🚀 How it works https://docs.docker.com/compose/
 
 ### Pre-requisites
 
 Before starting, you will need to have the following tools installed and properly configured on your machine:
-[Git](https://git-scm.com), [Ruby 3.2.2](https://www.ruby-lang.org/), [Rails 7.0.8](https://rubyonrails.org/), [Node.js](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/) and [PostgreSQL](https://www.postgresql.org/). 
+[Git](https://git-scm.com), [Ruby 3.2.2](https://www.ruby-lang.org/), [Rails 7.0.8](https://rubyonrails.org/), [Node.js](https://nodejs.org/en/), [Yarn](https://yarnpkg.com/),[PostgreSQL](https://www.postgresql.org/), [Docker](https://docs.docker.com/desktop/) and [docker-compose](https://docs.docker.com/compose/). 
 Also it's nice to have an editor to work with code like [VSCode](https://code.visualstudio.com/)
 
 #### RUN
