@@ -34,5 +34,5 @@ FileUtils.chdir APP_ROOT do
   system! 'bin/rails restart'
 
   puts "\n== Compile assets =="
-  system! 'bin/rails assets:precompile' 
+  system! 'bin/rails assets:precompile'
 end
