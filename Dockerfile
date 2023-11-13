@@ -18,6 +18,12 @@ RUN apt update \
                       postgresql-14
 
 RUN gem install pg
+RUN gem install pg
+ARG NODE_MAJOR=19
+RUN curl -sL https://deb.nodesource.com/setup_$NODE_MAJOR.x | bash -
+
+RUN apt-get update -qq && apt-get install -y nodejs && npm install -g yarn
+
 
 ADD . /home/app/web
 WORKDIR /home/app/web
