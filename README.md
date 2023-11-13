@@ -82,10 +82,6 @@ Also it's nice to have an editor to work with code like [VSCode](https://code.vi
 #### RUN
 
 ```bash
-# Once Ruby and Rails are properly installed, follow the next steps:
-# Install bundler
-$ gem install bundler
-
 # Clone this repository
 $ git clone https://github.com/roniewill/desconto-inss
 
@@ -93,15 +89,13 @@ $ git clone https://github.com/roniewill/desconto-inss
 $ cd desconto-inss
 
 # open the project with a code editor of your choice
-$ code .
+$ docker compose up
 
-# then run the commands on your terminal
-$ bundle install
-$ bin/setup
-$ rake db:seeds
-$ bin/dev 
-# or: rails s
 # The server will start by default at port: 3000 - go to http://localhost:3000
+
+# BTW: user and pass
+user: admin@email.com
+password: pass12
 
 ```
 
